@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
 class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() {
     return _HomeScreenState();
@@ -8,7 +7,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 
-
+@override
 
   //This function is called at every render of projectc
   Widget build(BuildContext context) {
@@ -17,46 +16,160 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget getHomeWidget() {
     return Scaffold(
-
-        backgroundColor: Colors.white,
-        appBar: PreferredSize(
-        preferredSize: Size.fromHeight(160.0),
-        child:AppBar(
-        flexibleSpace:ListTile(title:Padding(padding:EdgeInsets.only(top: 100.0,left: 110.0) , child: Text('Decore &',style: TextStyle(fontFamily: 'Montserrat' ,fontSize: 36.0,color: HexColor("#0F173E"),fontWeight: FontWeight.bold),),),
-        subtitle: Padding(padding:EdgeInsets.only(left: 130.0) ,child: Text('enjoy!',style: TextStyle(fontFamily: 'Montserrat' ,fontSize: 36.0,color: HexColor("#0F173E"),fontWeight: FontWeight.bold,height: 0.8,letterSpacing: 0.0),),),),
-          backgroundColor: Colors.transparent,
-          elevation: 0.0,),),
-          body: getBodyWidget(),   
+      backgroundColor: Colors.grey[900],
+        appBar:AppBar(
+          backgroundColor: Colors.blue,
+          elevation: 0.0,
+          flexibleSpace:SingleChildScrollView(scrollDirection: Axis.horizontal,
+            child: Row(
+            children: [
+            Padding(padding: EdgeInsets.only(top: 23.0,left: 18.0) ,
+              child: Text(
+            'Universal AC Remote Control',
+            style: TextStyle(
+              height: 2.0,
+              fontFamily: 'Roboto',
+                color: Colors.white,
+                fontSize: 22.0,
+                fontWeight: FontWeight.w500),
+          ),),
+          Padding(
+            padding: EdgeInsets.only(left: 50.0,top:35.0),
+            child:ElevatedButton.icon(onPressed:(){}, icon: Icon(Icons.more_vert,
+              color: Colors.white,
+              size: 30.0,
+              ), label: Text(''),
+              style: ElevatedButton.styleFrom(
+                      primary: Colors.blue, elevation: 0.0,alignment: Alignment(50.0,0.0),
+                    ),
+              )
+          )
+            ]
+            ),),
+          ),
+         body:Column(
+           children: [
+             Row(
+               children:[
+                 Padding(padding: EdgeInsets.only(left:155.0,top: 90.0),
+             child: Image(image: AssetImage('assets/images/900233.jpeg'),color: Colors.blue,width: 60.0,)
+             ),
+             Padding(
+              padding: EdgeInsets.only(left: 30.0,top: 80.0),
+              child: Text(
+                'AC',
+                style: TextStyle(
+                    fontFamily: 'Roboto',
+                    color: Colors.blue,
+                    fontSize: 23.0,
+                    fontWeight: FontWeight.w400),
+              ),
+            ),
+             ]),
+             Padding(padding: EdgeInsets.only(top: 10.0),
+             child:Container(width: 370.0,
+             child: Divider(color: Colors.grey[800],height: 0.1),),),
+             Row(
+               children:[
+                 Padding(padding: EdgeInsets.only(left: 130.0,top: 10.0),
+                 child:ElevatedButton.icon(onPressed: (){}, icon: Icon(Icons.group,
+                 color: Colors.blue,
+                 size: 50.0,
+                 ),
+                 style: ElevatedButton.styleFrom(primary: Colors.grey[900],elevation: 0.0)
+                 , label: Text(
+                  ''),),),
+                 Padding(
+                padding: EdgeInsets.only(right: 20.0, top: 20.0),
+                child: Text(
+                  'Share Us',
+                  style: TextStyle(
+                      fontFamily: 'Roboto',
+                      color: Colors.blue,
+                      fontSize: 23.0,
+                      fontWeight: FontWeight.w400),
+                ),
+              ),
+           ],),
+           Padding(
+            padding: EdgeInsets.only(top: 20.0),
+            child: Container(
+              width: 370.0,
+              child: Divider(color: Colors.grey[800], height: 0.1),
+            ),
+          ),
+           Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 130.0, top: 10.0),
+                child: ElevatedButton.icon(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.markunread,
+                    color: Colors.blue,
+                    size: 50.0,
+                  ),
+                  style: ElevatedButton.styleFrom(
+                      primary: Colors.grey[900], elevation: 0.0),
+                  label: Text(''),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(right: 20.0, top: 20.0),
+                child: Text(
+                  'Contact Us',
+                  style: TextStyle(
+                      fontFamily: 'Roboto',
+                      color: Colors.blue,
+                      fontSize: 23.0,
+                      fontWeight: FontWeight.w400),
+                ),
+              ),
+            ],
+          ),
+           Padding(
+            padding: EdgeInsets.only(top: 20.0),
+            child: Container(
+              width: 370.0,
+              child: Divider(color: Colors.grey[800], height: 0.1),
+            ),
+          ),
+          Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 100.0, top: 15.0),
+                child: ElevatedButton.icon(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.favorite,
+                    color: Colors.blue,
+                    size: 50.0,
+                  ),
+                  style: ElevatedButton.styleFrom(
+                      primary: Colors.grey[900], elevation: 0.0),
+                  label: Text(''),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(right: 20.0, top: 20.0),
+                child: Text(
+                  '(1) Your Remotes',
+                  style: TextStyle(
+                      fontFamily: 'Roboto',
+                      color: Colors.blue,
+                      fontSize: 23.0,
+                      fontWeight: FontWeight.w400),
+                ),
+              ),
+            ],
+          ),
+          Padding(padding: EdgeInsets.only(top: 40.0,left: 30.0),
+          child:Text('AC',style: TextStyle(fontFamily: 'Roboto',
+                      color: Colors.blue,
+                      fontSize: 97.0,
+                      fontWeight: FontWeight.w300),),)
+           ],
+         ) ,   
         );
   }
-        Widget getBodyWidget(){
-          return Scaffold(
-            bottomSheet:Padding(padding: EdgeInsets.only(bottom: 40.0,left: 90.0), 
-              child:Row(
-              children:[ 
-                Text('Already have an account?',
-              style: TextStyle(
-                fontFamily: 'Raleway',
-                fontSize: 16.0,
-                color: Colors.black,
-              )),
-                Text('Sign in',
-              style: TextStyle(
-                fontFamily: 'Raleway',
-                fontSize: 16.0,
-                color: Colors.black,fontWeight: FontWeight.bold
-              ))
-            ]),),
-            floatingActionButton:Padding(padding: EdgeInsets.only(bottom: 50.0,right: 90.0),child: ElevatedButton(child: Text('Get started',style: TextStyle(fontFamily: 'Raleway' ,fontSize: 18.0,color:Colors.white,),),onPressed: (){
-              Navigator.pushNamed(context, '/second');
-            },
-            style:ElevatedButton.styleFrom(primary: Colors.indigo[200],fixedSize: Size(200.0, 45.0),shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0),),),),),
-          body: Center( 
-          child: Padding(padding: EdgeInsets.only(right:20.0 ,left:20.0 ),
-          child: Container(
-             decoration:BoxDecoration(
-               color: Colors.white,
-               image:DecorationImage(alignment:Alignment.topCenter,scale: 1.0 ,image:AssetImage('assets/images/icon-09.jpeg'),),),),),)
-          );
-        }
 }
